@@ -27,7 +27,7 @@ class TestAccount(unittest.TestCase):
         app.config["DEBUG"] = False
         app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
         app.logger.setLevel(logging.CRITICAL)
-        Account.init_db(app)
+        db.create_all()
 
     @classmethod
     def tearDownClass(cls):
@@ -175,3 +175,11 @@ class TestAccount(unittest.TestCase):
         """It should not Deserialize an account with a TypeError"""
         account = Account()
         self.assertRaises(DataValidationError, account.deserialize, [])
+
+    def test_optional_fields(self):
+        """It should default the join date and allow an omitted phone number."""
+        from datetime import date
+        account = Account().deserialize({"name": "Customer", "email": "customer@example.com", "address": "1 Main Street"})
+        self.assertEqual(account.date_joined, date.today())
+        self.assertIsNone(account.phone_number)
+        self.assertIn("Customer", repr(account))

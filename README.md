@@ -1,4 +1,8 @@
-# DevOps Capstone Template
+# devops-capstone-project
+
+[![CI Build](https://github.com/kkanaan-gif/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)](https://github.com/kkanaan-gif/devops-capstone-project/actions/workflows/ci-build.yaml)
+
+Customer Accounts REST microservice built with Flask and PostgreSQL. Supports creating, reading, updating, deleting, and listing accounts, with Talisman security headers, CORS, automated tests, GitHub Actions CI, and Tekton deployment to Kubernetes.
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.9](https://img.shields.io/badge/Python-3.9-green.svg)](https://shields.io/)

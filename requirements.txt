@@ -5,7 +5,7 @@ SQLAlchemy==1.4.46
 # Build dependencies
 Flask==2.1.2
 Flask-SQLAlchemy==2.5.1
-psycopg2-binary==2.9.3
+psycopg2-binary==2.9.10
 python-dotenv==0.20.0
 
 # Runtime dependencies
@@ -27,3 +27,7 @@ coverage==6.3.2
 
 # Utilities
 httpie==3.2.1
+
+# Security
+Flask-Talisman==1.0.0
+Flask-Cors==4.0.2
