@@ -1,0 +1,16 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: cd-pipeline-
+spec:
+  pipelineRef:
+    name: cd-pipeline
+  serviceAccountName: pipeline
+  params:
+    - name: branch
+      value: cd-pipeline
+  workspaces:
+    - name: pipeline-workspace
+      persistentVolumeClaim:
+        claimName: pipelinerun-pvc
+  timeout: 45m

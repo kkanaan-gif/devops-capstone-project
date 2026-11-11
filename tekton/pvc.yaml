@@ -3,10 +3,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: pipelinerun-pvc
 spec:
+  accessModes: [ReadWriteMany]
   storageClassName: skills-network-learner
   resources:
     requests:
-      storage:  1Gi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteMany
+      storage: 1Gi
